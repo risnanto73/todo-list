@@ -72,7 +72,7 @@
                                     @if (date('d M Y', strtotime($item->deadline)) < date('d M Y'))
                                         <span
                                             class="badge bg-danger">{{ date('d M Y', strtotime($item->deadline)) }}</span>
-                                    @elseif ($item->deadline == date('d M Y'))
+                                    @elseif (date('d M Y', strtotime($item->deadline)) == date('d M Y'))
                                         <span
                                             class="badge bg-warning">{{ date('d M Y', strtotime($item->deadline)) }}</span>
                                     @else
