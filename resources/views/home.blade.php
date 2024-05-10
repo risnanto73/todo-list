@@ -49,7 +49,6 @@
                             <th>#</th>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Created At</th>
                             <th>Deadline</th>
                             <th>Status</th>
                             <th>Actions</th>
@@ -61,13 +60,6 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->title }}</td>
                                 <td>{{ $item->description }}</td>
-                                <td>
-                                    @if ($item->created_at < date('d M Y'))
-                                        <span class="badge bg-danger">{{ $item->created_at->format('d M Y') }}</span>
-                                    @else
-                                        <span class="badge bg-success">{{ $item->created_at->format('d M Y') }}</span>
-                                    @endif
-                                </td>
                                 <td>
                                     @if (date('d M Y', strtotime($item->deadline)) < date('d M Y'))
                                         <span

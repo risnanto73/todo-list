@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $todo = Todo::where('user_id', auth()->user()->id)
-            ->select('id', 'title', 'description', 'status', 'deadline', 'created_at')
+            ->select('id', 'title', 'description', 'status', 'deadline')
             ->latest()->get();
 
         return view('home', compact(
